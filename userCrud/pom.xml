@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fabio</groupId>
-	<artifactId>fcrud</artifactId>
+	<artifactId>userCrud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fcrud</name>
+	<name>userCrud</name>
 	<description>My first CRUD</description>
 	<url/>
 	<licenses>
