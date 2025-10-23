@@ -3,19 +3,20 @@ package com.fabio.userCrud.service;
 import com.fabio.userCrud.dto.UserDto;
 import com.fabio.userCrud.exceptions.UserNotFoundException;
 import com.fabio.userCrud.model.User;
-import com.fabio.userCrud.repositories.UserRepository;
+import com.fabio.userCrud.ports.UserRepositoryPort;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
 
     @Autowired
-    UserRepository userRepository;
+    @Qualifier("Postgres")
+    UserRepositoryPort userRepository;
 
     public User findById(Integer id) {
         return userRepository.findById(id)

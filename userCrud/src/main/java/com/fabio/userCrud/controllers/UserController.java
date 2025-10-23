@@ -1,7 +1,6 @@
 package com.fabio.userCrud.controllers;
 
 import com.fabio.userCrud.dto.UserDto;
-import com.fabio.userCrud.exceptions.UserNotFoundException;
 import com.fabio.userCrud.model.User;
 import com.fabio.userCrud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +44,8 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity updateByid(@PathVariable(value = "id") Integer id, @RequestBody UserDto dto) {
-            userService.updateByid(id, dto);
-            return ResponseEntity.status(HttpStatus.OK).body("User updated");
+        userService.updateByid(id, dto);
+        return ResponseEntity.status(HttpStatus.OK).body("User updated");
     }
 
 }
