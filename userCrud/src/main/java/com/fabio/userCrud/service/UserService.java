@@ -15,12 +15,12 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    @Qualifier("Postgres")
+    @Qualifier("externalApi")
     UserRepositoryPort userRepository;
 
     public User findById(Integer id) {
         return userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
+                .orElseThrow();
     }
 
     public List<User> getAll() {
